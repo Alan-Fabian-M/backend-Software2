@@ -25,11 +25,10 @@ class Settings:
     BASE_DIR: Path = Path(__file__).resolve().parent.parent.parent
     TEMP_DIR: Path = BASE_DIR / "temp"
 
-    # Furniture detection (Scene Compiler / Fase 2A).
-    # Modelo entrenado con CubiCasa5K (5.000 planos arquitectonicos reales).
-    # Clases: bathroom(0), bed(1), door(2), kitchen(3), room(4), stairs(5), wall(6), window(7)
-    # Para volver al modelo generico: cambiar a "yolov8n.pt"
-    YOLO_MODEL_PATH: str = os.getenv("YOLO_MODEL_PATH", "YOLO/best.pt")
+    # Furniture & Architectural element detection (Scene Compiler / Fase 2A).
+    # Modelo entrenado con FloorPlanCAD (200 planos arquitectonicos reales).
+    # Clases: wall, single_door, double_door, sliding_door, window, stair, bed, sofa, table, chair, toilet, sink, bath_tub, refrigerator, gas_stove, wardrobe
+    YOLO_MODEL_PATH: str = os.getenv("YOLO_MODEL_PATH", "YOLO/best_floorplancad.pt")
     YOLO_CONFIDENCE_THRESHOLD: float = float(os.getenv("YOLO_CONFIDENCE_THRESHOLD", "0.35"))
 
     # Fallback room size (meters) used when OCR can't read a written dimension
