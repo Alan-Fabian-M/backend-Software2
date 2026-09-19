@@ -26,10 +26,10 @@ class Settings:
     TEMP_DIR: Path = BASE_DIR / "temp"
 
     # Furniture detection (Scene Compiler / Fase 2A).
-    # Swap this to a custom-trained checkpoint once `training/cubicasa` produces
-    # one (e.g. "training/runs/obb/train/weights/best.pt") to get real furniture
-    # orientation instead of the current always-0 angle. See furniture_detector.py.
-    YOLO_MODEL_PATH: str = os.getenv("YOLO_MODEL_PATH", "yolov8n.pt")
+    # Modelo entrenado con CubiCasa5K (5.000 planos arquitectonicos reales).
+    # Clases: bathroom(0), bed(1), door(2), kitchen(3), room(4), stairs(5), wall(6), window(7)
+    # Para volver al modelo generico: cambiar a "yolov8n.pt"
+    YOLO_MODEL_PATH: str = os.getenv("YOLO_MODEL_PATH", "YOLO/best.pt")
     YOLO_CONFIDENCE_THRESHOLD: float = float(os.getenv("YOLO_CONFIDENCE_THRESHOLD", "0.35"))
 
     # Fallback room size (meters) used when OCR can't read a written dimension

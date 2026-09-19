@@ -1,22 +1,27 @@
 """Scale detection via OCR ("the reader" of the pipeline).
 
-Ported from `SpatialSceneCompiler/scene_compiler.py`. One important fix from
-that prototype: it hardcoded a Windows path to the Tesseract binary
-(`C:\\Program Files\\Tesseract-OCR\\tesseract.exe`), which would silently
-fail on this Linux dev machine. This version relies on the `tesseract`
-binary being available on PATH instead -- install it via the system package
-manager (e.g. `sudo dnf install tesseract` on Fedora, `sudo apt install
-tesseract-ocr` on Debian/Ubuntu) before running the OCR-dependent endpoint.
+Ported from `SpatialSceneCompiler/scene_compiler.py`. Supports both PATH-based
+and explicit-path Tesseract configurations. On Windows, automatically falls back
+to the standard installation path `C:\\Program Files\\Tesseract-OCR\\tesseract.exe`
+if the binary is not found on PATH. On Linux/macOS, install via the system
+package manager (e.g. `sudo apt install tesseract-ocr`).
 """
 
 from __future__ import annotations
 
+import os
 import re
 from dataclasses import dataclass
 
 import cv2
 import numpy as np
 import pytesseract
+
+# Windows fallback: point pytesseract at the standard Tesseract install path
+# if the binary is not already discoverable on PATH.
+_WINDOWS_TESSERACT = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+if os.name == "nt" and os.path.isfile(_WINDOWS_TESSERACT):
+    pytesseract.pytesseract.tesseract_cmd = _WINDOWS_TESSERACT
 
 _DIMENSION_PATTERN = re.compile(r"(\d+[.,]?\d*)\s*(m|cm|mts?)\b", re.IGNORECASE)
 
