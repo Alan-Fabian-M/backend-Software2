@@ -38,6 +38,12 @@ def train(
     device: str = "cpu",
     project: str = "runs/cubicasa",
     name: str = "exp1",
+    lr0: float = 0.01,
+    patience: int = 100,
+    freeze: int | None = None,
+    hsv_h: float = 0.015,
+    hsv_s: float = 0.7,
+    hsv_v: float = 0.4,
 ) -> None:
     if model_name is None:
         model_name = "yolov8n-seg.pt" if task == "segment" else "yolov8n.pt"
@@ -53,13 +59,25 @@ def train(
     logger.info("Resolucion: %d px", imgsz)
     logger.info("Batch:      %d", batch)
     logger.info("Dispositivo: %s", device)
+    logger.info("LR inicial: %s", lr0)
+    logger.info("Patience:   %d", patience)
+    logger.info("Freeze:     %s", freeze if freeze is not None else "ninguna capa")
+    logger.info("HSV aug:    h=%s s=%s v=%s", hsv_h, hsv_s, hsv_v)
     logger.info("Salida:     %s/%s", project, name)
 
-    # Cargar modelo pre-entrenado
+    # Cargar modelo pre-entrenado (para fine-tuning, pasar --model YOLO/best_floorplancad.pt)
     model = YOLO(model_name)
 
-    # Iniciar entrenamiento
-    results = model.train(
+    # Iniciar entrenamiento. Los parámetros de fine-tuning por encima de los
+    # defaults de entrenamiento fresco:
+    #   - lr0 más bajo: ya partimos de buenos pesos, no queremos pisarlos.
+    #   - hsv_* de color más fuertes: los estilos ilustrados/renderizados son
+    #     coloridos y variados; forzar variación de tono/saturación/brillo ayuda
+    #     a generalizar más allá del line-art monocromo de FloorPlanCAD.
+    #   - freeze opcional: congelar el backbone (~10 capas) reentrena solo la
+    #     cabeza de detección, más rápido y con menos riesgo de olvido si el
+    #     dataset nuevo es chico.
+    train_kwargs = dict(
         data=str(data_yaml.as_posix()),
         epochs=epochs,
         imgsz=imgsz,
@@ -69,7 +87,16 @@ def train(
         name=name,
         workers=2,
         plots=True,
+        lr0=lr0,
+        patience=patience,
+        hsv_h=hsv_h,
+        hsv_s=hsv_s,
+        hsv_v=hsv_v,
     )
+    if freeze is not None:
+        train_kwargs["freeze"] = freeze
+
+    results = model.train(**train_kwargs)
 
     logger.info("Entrenamiento finalizado exitosamente!")
     best_pt = Path(project) / name / "weights" / "best.pt"
@@ -102,6 +129,16 @@ def main() -> None:
     parser.add_argument("--batch", type=int, default=8, help="Tamaño del batch")
     parser.add_argument("--device", type=str, default="cpu", help="Dispositivo ('cpu' o '0' para GPU)")
     parser.add_argument("--name", type=str, default="cubicasa_run", help="Nombre del experimento")
+    # --- Fine-tuning (transfer learning desde un best.pt existente) ---
+    parser.add_argument("--lr0", type=float, default=0.01,
+                        help="Learning rate inicial. Para fine-tuning usar ~0.001")
+    parser.add_argument("--patience", type=int, default=100,
+                        help="Épocas sin mejora antes de early-stop (fine-tuning: ~10-15)")
+    parser.add_argument("--freeze", type=int, default=None,
+                        help="Congelar las primeras N capas (backbone ~10). Omitir para entrenar todo")
+    parser.add_argument("--hsv-h", type=float, default=0.015, help="Augment: variación de tono")
+    parser.add_argument("--hsv-s", type=float, default=0.7, help="Augment: variación de saturación")
+    parser.add_argument("--hsv-v", type=float, default=0.4, help="Augment: variación de brillo")
 
     args = parser.parse_args()
 
@@ -114,6 +151,12 @@ def main() -> None:
         batch=args.batch,
         device=args.device,
         name=args.name,
+        lr0=args.lr0,
+        patience=args.patience,
+        freeze=args.freeze,
+        hsv_h=args.hsv_h,
+        hsv_s=args.hsv_s,
+        hsv_v=args.hsv_v,
     )
 
 
