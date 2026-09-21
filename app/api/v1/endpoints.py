@@ -150,17 +150,17 @@ async def preprocess_pipeline_details(
     summary="Compile a floor plan sketch photo into a Scene Graph JSON for Unity",
 )
 async def compilar_sala(
-    file: UploadFile = File(..., description="Floor plan / croquis photo (JPG, PNG, WEBP)"),
+    file: UploadFile = File(None, description="Floor plan / croquis photo (JPG, PNG, WEBP)"),
+    archivo: UploadFile = File(None, description="Alias for Unity CroquisSceneCompilerController (archivo)"),
 ):
-    """Full pipeline: photo -> (YOLO furniture detection + OpenCV room contour +
-    OCR scale reading) -> Scene Graph JSON.
+    upload_file = file or archivo
+    if upload_file is None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="No image file provided. Use field 'file' or 'archivo'.",
+        )
 
-    This is the endpoint `CroquisSceneCompilerController.cs` calls in Unity.
-    The response shape matches `SceneGenerator.GenerateSceneAsync()`'s expected
-    input exactly -- same schema as the bundled presets in
-    `Assets/Resources/ScenePresets/*.json` -- so Unity needs no translation step.
-    """
-    contents = await _validate_and_read_image(file)
+    contents = await _validate_and_read_image(upload_file)
 
     try:
         return SceneCompiler.compile(contents)

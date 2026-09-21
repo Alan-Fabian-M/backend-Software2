@@ -31,12 +31,9 @@ from app.core.config import settings
 
 logger = logging.getLogger(__name__)
 
-# COCO class name -> unified type understood by Unity's PrefabMapper.cs.
-# Only types PrefabMapper actually resolves are listed here on purpose --
-# anything else (e.g. "potted plant") is detected by the stock COCO model
-# but has no matching prefab category in Unity today, so it's dropped rather
-# than sent as a type Unity can't resolve.
-COCO_CLASS_TO_UNITY_TYPE = {
+# Mapping of dataset class names (COCO + FloorPlanCAD) -> unified type understood by Unity.
+CLASS_TO_UNITY_TYPE = {
+    # COCO mappings
     "couch": "sofa",
     "chair": "silla",
     "bed": "cama",
@@ -47,7 +44,23 @@ COCO_CLASS_TO_UNITY_TYPE = {
     "toilet": "inodoro",
     "oven": "horno",
     "microwave": "microondas",
+    # FloorPlanCAD mappings
+    "single_door": "puerta",
+    "double_door": "puerta_doble",
+    "sliding_door": "puerta_corrediza",
+    "window": "ventana",
+    "stair": "escalera",
+    "sofa": "sofa",
+    "table": "mesa",
+    "bath_tub": "tina",
+    "gas_stove": "estufa",
+    "wardrobe": "armario",
+    # NB: FloorPlanCAD's "wall" class is intentionally NOT mapped. Walls are
+    # the room boundary and are emitted by RoomExtractor.build_wall_elements()
+    # as the 4 structural muros; letting YOLO also emit per-segment "muro"
+    # detections would duplicate/conflict with those in the Unity scene.
 }
+COCO_CLASS_TO_UNITY_TYPE = CLASS_TO_UNITY_TYPE
 
 
 @dataclass

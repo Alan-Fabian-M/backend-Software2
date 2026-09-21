@@ -25,11 +25,10 @@ class Settings:
     BASE_DIR: Path = Path(__file__).resolve().parent.parent.parent
     TEMP_DIR: Path = BASE_DIR / "temp"
 
-    # Furniture detection (Scene Compiler / Fase 2A).
-    # Swap this to a custom-trained checkpoint once `training/cubicasa` produces
-    # one (e.g. "training/runs/obb/train/weights/best.pt") to get real furniture
-    # orientation instead of the current always-0 angle. See furniture_detector.py.
-    YOLO_MODEL_PATH: str = os.getenv("YOLO_MODEL_PATH", "yolov8n.pt")
+    # Furniture & Architectural element detection (Scene Compiler / Fase 2A).
+    # Modelo entrenado con FloorPlanCAD (200 planos arquitectonicos reales).
+    # Clases: wall, single_door, double_door, sliding_door, window, stair, bed, sofa, table, chair, toilet, sink, bath_tub, refrigerator, gas_stove, wardrobe
+    YOLO_MODEL_PATH: str = os.getenv("YOLO_MODEL_PATH", "YOLO/best_floorplancad.pt")
     YOLO_CONFIDENCE_THRESHOLD: float = float(os.getenv("YOLO_CONFIDENCE_THRESHOLD", "0.35"))
 
     # Fallback room size (meters) used when OCR can't read a written dimension

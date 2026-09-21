@@ -22,3 +22,33 @@ outputs/
 *.jpg
 *.jpeg
 !tests/fixtures/*
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Unity generated folders & files
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+*.slnx
+*.csproj
+*.unityproj
+*.sln
+
+# AI / ML Datasets, Weights & Experiment Runs
+datasets/
+data_samples/
+runs/
+YOLO/floorplancad/
+YOLO/cubicasa_coco/
+*.pt
+scratch_test.py
+

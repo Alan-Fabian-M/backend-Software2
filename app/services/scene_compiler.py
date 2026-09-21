@@ -17,6 +17,8 @@ import numpy as np
 from app.core.config import settings
 from app.models.scene_graph import (
     ElementMaterial,
+    ElementProperties,
+    ElementTransform,
     RoomDimensions,
     RoomInfo,
     SceneElement,
@@ -77,15 +79,29 @@ class SceneCompiler:
             x_m = round((px - origin_px[0]) / px_per_m, 2)
             z_m = round((room_height_px - (py - origin_px[1])) / px_per_m, 2)  # image Y -> Unity Z (inverted)
 
+            pos_v3 = Vector3(x=x_m, y=0.0, z=z_m)
+            rot_v3 = Vector3(x=0.0, y=item.angle_deg, z=0.0)
+            scale_v3 = Vector3(x=1.0, y=1.0, z=1.0)
+
             scene_elements.append(
                 SceneElement(
                     id=f"obj_{i:03d}",
                     type=item.unity_type,
+                    class_label=item.unity_type,
+                    prefab_id=item.unity_type,
                     confidence=round(item.confidence, 2),
-                    position=Vector3(x=x_m, y=0.0, z=z_m),
-                    rotation=Vector3(x=0.0, y=item.angle_deg, z=0.0),
-                    scale=Vector3(x=1.0, y=1.0, z=1.0),
+                    position=pos_v3,
+                    rotation=rot_v3,
+                    scale=scale_v3,
                     material=ElementMaterial(color=item.color_hex),
+                    transform=ElementTransform(
+                        position=pos_v3,
+                        rotation=rot_v3,
+                        scale=scale_v3,
+                    ),
+                    properties=ElementProperties(
+                        color_hex=item.color_hex,
+                    ),
                 ).model_dump()
             )
 

@@ -47,15 +47,30 @@ class ElementMetadataFlags(BaseModel):
     movable: Optional[bool] = None
 
 
+class ElementTransform(BaseModel):
+    position: Vector3
+    rotation: Vector3 = Field(default_factory=Vector3)
+    scale: Vector3 = Field(default_factory=lambda: Vector3(x=1.0, y=1.0, z=1.0))
+
+
+class ElementProperties(BaseModel):
+    color_hex: Optional[str] = None
+    material_type: Optional[str] = None
+
+
 class SceneElement(BaseModel):
     id: str
     type: str = Field(description="Furniture/structural type. See PrefabMapper.cs for the supported list.")
+    class_label: Optional[str] = None
+    prefab_id: Optional[str] = None
     confidence: float = Field(default=0.85, ge=0.0, le=1.0)
     position: Vector3
     rotation: Vector3 = Field(default_factory=Vector3)
     scale: Vector3 = Field(default_factory=lambda: Vector3(x=1.0, y=1.0, z=1.0))
     material: Optional[ElementMaterial] = None
     metadata: Optional[ElementMetadataFlags] = None
+    transform: Optional[ElementTransform] = None
+    properties: Optional[ElementProperties] = None
 
 
 class RoomDimensions(BaseModel):
