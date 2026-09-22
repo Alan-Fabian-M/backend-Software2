@@ -1,0 +1,84 @@
+<svg viewBox="0 0 1000 560" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <style>
+    .actor { font-size:14px; font-weight:700; fill:#1c2a44; }
+    .lane { stroke:#c7d2e6; stroke-width:1.5; }
+    .step { fill:#eef4ff; stroke:#2f5fae; stroke-width:1.5; }
+    .step-net { fill:#fff3e6; stroke:#c97a1a; stroke-width:1.5; }
+    .step-title { font-size:12.5px; font-weight:700; fill:#1c2a44; }
+    .step-sub { font-size:10.5px; fill:#4a5568; }
+    .edge { stroke:#2f5fae; stroke-width:1.8; fill:none; marker-end:url(#arrow3); }
+  </style>
+  <defs>
+    <marker id="arrow3" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#2f5fae"/>
+    </marker>
+  </defs>
+
+  <text x="500" y="28" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2a44">Flujo: pedido en lenguaje natural → cambio aplicado en la escena</text>
+
+  <!-- Lanes -->
+  <line class="lane" x1="150" y1="55" x2="150" y2="520"/>
+  <line class="lane" x1="500" y1="55" x2="500" y2="520"/>
+  <line class="lane" x1="850" y1="55" x2="850" y2="520"/>
+
+  <text class="actor" x="150" y="50" text-anchor="middle">Usuario</text>
+  <text class="actor" x="500" y="50" text-anchor="middle">Unity (Editor / build)</text>
+  <text class="actor" x="850" y="50" text-anchor="middle">Ollama local (localhost:11434)</text>
+
+  <!-- Paso 1 -->
+  <rect class="step" x="70" y="70" width="160" height="55" rx="8"/>
+  <text class="step-title" x="150" y="92" text-anchor="middle">Dice o escribe el pedido</text>
+  <text class="step-sub" x="150" y="108" text-anchor="middle">"poné la pared gris"</text>
+
+  <!-- Paso 2 -->
+  <rect class="step" x="420" y="70" width="160" height="55" rx="8"/>
+  <text class="step-title" x="500" y="92" text-anchor="middle">VoiceCommandController /</text>
+  <text class="step-sub" x="500" y="108" text-anchor="middle">InputField → EnviarComando()</text>
+  <path class="edge" d="M230,97 L418,97"/>
+
+  <!-- Paso 3 -->
+  <rect class="step" x="420" y="150" width="160" height="70" rx="8"/>
+  <text class="step-title" x="500" y="172" text-anchor="middle">OllamaAIController</text>
+  <text class="step-sub" x="500" y="188" text-anchor="middle">arma prompt con reglas de</text>
+  <text class="step-sub" x="500" y="202" text-anchor="middle">colores válidos (pared/sofá)</text>
+  <path class="edge" d="M500,125 L500,148"/>
+
+  <!-- Paso 4: POST -->
+  <rect class="step-net" x="770" y="150" width="170" height="60" rx="8"/>
+  <text class="step-title" x="855" y="172" text-anchor="middle">POST /api/generate</text>
+  <text class="step-sub" x="855" y="188" text-anchor="middle">modelo gemma2:2b, stream:false</text>
+  <path class="edge" d="M580,180 L768,180"/>
+
+  <!-- Paso 5: respuesta -->
+  <rect class="step-net" x="770" y="240" width="170" height="60" rx="8"/>
+  <text class="step-title" x="855" y="262" text-anchor="middle">Responde texto</text>
+  <text class="step-sub" x="855" y="278" text-anchor="middle">{"target":"pared","color":"gris"}</text>
+
+  <!-- Paso 6: limpieza -->
+  <rect class="step" x="420" y="240" width="160" height="60" rx="8"/>
+  <text class="step-title" x="500" y="262" text-anchor="middle">LimpiarRespuesta()</text>
+  <text class="step-sub" x="500" y="278" text-anchor="middle">sacar ```json``` y texto extra</text>
+  <path class="edge" d="M768,270 L580,270"/>
+
+  <!-- Paso 7: parseo -->
+  <rect class="step" x="420" y="320" width="160" height="55" rx="8"/>
+  <text class="step-title" x="500" y="342" text-anchor="middle">JsonUtility.FromJson</text>
+  <text class="step-sub" x="500" y="358" text-anchor="middle">→ ComandoIA {target, color}</text>
+  <path class="edge" d="M500,300 L500,318"/>
+
+  <!-- Paso 8: aplicar -->
+  <rect class="step" x="420" y="395" width="160" height="70" rx="8"/>
+  <text class="step-title" x="500" y="417" text-anchor="middle">AplicarComando()</text>
+  <text class="step-sub" x="500" y="433" text-anchor="middle">busca índice de color →</text>
+  <text class="step-sub" x="500" y="447" text-anchor="middle">MaterialChangerVR.SetMaterialByIndex()</text>
+  <path class="edge" d="M500,375 L500,393"/>
+
+  <!-- Paso 9: resultado visible -->
+  <rect class="step" x="70" y="395" width="160" height="70" rx="8"/>
+  <text class="step-title" x="150" y="417" text-anchor="middle">Ve el cambio</text>
+  <text class="step-sub" x="150" y="433" text-anchor="middle">la pared cambia de color</text>
+  <text class="step-sub" x="150" y="447" text-anchor="middle">en tiempo real</text>
+  <path class="edge" d="M418,430 L232,430"/>
+
+  <text x="500" y="510" text-anchor="middle" font-size="12.5" fill="#4a5568">Si el color/objetivo no es válido, o si Ollama no responde, el flujo termina antes con un mensaje de error en pantalla (no rompe la escena).</text>
+</svg>

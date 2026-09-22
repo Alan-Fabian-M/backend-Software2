@@ -1,0 +1,90 @@
+<svg viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <style>
+    .core { fill:#2f5fae; stroke:#1c3a70; stroke-width:2; }
+    .core-label { fill:#fff; font-size:16px; font-weight:700; }
+    .box { fill:#eef4ff; stroke:#2f5fae; stroke-width:1.5; }
+    .box-title { font-size:13px; font-weight:700; fill:#1c2a44; }
+    .box-sub { font-size:10.5px; fill:#4a5568; }
+    .edge { stroke:#7a8bab; stroke-width:1.5; fill:none; marker-end:url(#arrow2); }
+    .group-title { font-size:13px; font-weight:700; fill:#6b7280; }
+  </style>
+  <defs>
+    <marker id="arrow2" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#7a8bab"/>
+    </marker>
+  </defs>
+
+  <text x="500" y="28" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2a44">InmobiliariaVR — arquitectura de scripts (Sala_MVP)</text>
+
+  <!-- Core -->
+  <rect class="core" x="410" y="270" width="180" height="80" rx="12"/>
+  <text class="core-label" x="500" y="305" text-anchor="middle">StateManager</text>
+  <text class="core-label" x="500" y="325" text-anchor="middle" font-size="12" font-weight="400">AppState (singleton)</text>
+
+  <!-- Grupo: Menú / navegación -->
+  <text class="group-title" x="140" y="90">Menú y navegación</text>
+  <rect class="box" x="60" y="100" width="160" height="55" rx="8"/>
+  <text class="box-title" x="140" y="122" text-anchor="middle">ToggleMenuVR</text>
+  <text class="box-sub" x="140" y="138" text-anchor="middle">abre/cierra menú frente al jugador</text>
+
+  <rect class="box" x="60" y="175" width="160" height="55" rx="8"/>
+  <text class="box-title" x="140" y="197" text-anchor="middle">SideMenuVR</text>
+  <text class="box-sub" x="140" y="213" text-anchor="middle">pestañas → panel + AppState</text>
+
+  <rect class="box" x="60" y="250" width="160" height="55" rx="8"/>
+  <text class="box-title" x="140" y="272" text-anchor="middle">MenuControllerVR</text>
+  <text class="box-sub" x="140" y="288" text-anchor="middle">alterna canvas + SetMode()</text>
+
+  <!-- Grupo: Manipulación de muebles -->
+  <text class="group-title" x="140" y="345">Manipulación de muebles</text>
+  <rect class="box" x="60" y="355" width="160" height="55" rx="8"/>
+  <text class="box-title" x="140" y="377" text-anchor="middle">FurnitureSelectable</text>
+  <text class="box-sub" x="140" y="393" text-anchor="middle">mide sostener Select</text>
+
+  <rect class="box" x="60" y="430" width="160" height="55" rx="8"/>
+  <text class="box-title" x="140" y="452" text-anchor="middle">FurnitureManipulatorVR</text>
+  <text class="box-sub" x="140" y="468" text-anchor="middle">mover / rotar mueble actual</text>
+
+  <!-- Grupo: Materiales -->
+  <text class="group-title" x="780" y="90">Materiales / pintura</text>
+  <rect class="box" x="770" y="100" width="170" height="55" rx="8"/>
+  <text class="box-title" x="855" y="122" text-anchor="middle">MaterialChangerVR</text>
+  <text class="box-sub" x="855" y="138" text-anchor="middle">ciclar/fijar material de un objeto</text>
+
+  <rect class="box" x="770" y="175" width="170" height="55" rx="8"/>
+  <text class="box-title" x="855" y="197" text-anchor="middle">RayPaintVR</text>
+  <text class="box-sub" x="855" y="213" text-anchor="middle">pintar superficie con rayo</text>
+
+  <!-- Grupo: IA -->
+  <text class="group-title" x="780" y="345">Asistente de IA</text>
+  <rect class="box" x="770" y="355" width="170" height="55" rx="8"/>
+  <text class="box-title" x="855" y="377" text-anchor="middle">VoiceCommandController</text>
+  <text class="box-sub" x="855" y="393" text-anchor="middle">dictado de voz (solo Windows)</text>
+
+  <rect class="box" x="770" y="430" width="170" height="55" rx="8"/>
+  <text class="box-title" x="855" y="452" text-anchor="middle">OllamaAIController</text>
+  <text class="box-sub" x="855" y="468" text-anchor="middle">POST a Ollama local, aplica color</text>
+
+  <!-- Grupo: Persistencia / exportación -->
+  <text class="group-title" x="500" y="440">Persistencia y exportación (independientes de AppState)</text>
+  <rect class="box" x="410" y="450" width="160" height="55" rx="8"/>
+  <text class="box-title" x="490" y="472" text-anchor="middle">SaveDataSerializer</text>
+  <text class="box-sub" x="490" y="488" text-anchor="middle">guarda/carga JSON en disco</text>
+
+  <rect class="box" x="600" y="450" width="160" height="55" rx="8"/>
+  <text class="box-title" x="680" y="472" text-anchor="middle">StlExportController</text>
+  <text class="box-sub" x="680" y="488" text-anchor="middle">exporta la sala a .stl</text>
+
+  <!-- Edges hacia StateManager (consultan CurrentState) -->
+  <path class="edge" d="M220,127 C 320,150 380,220 412,290"/>
+  <path class="edge" d="M220,202 C 320,220 380,250 412,290"/>
+  <path class="edge" d="M220,277 C 320,290 380,300 412,305"/>
+  <path class="edge" d="M220,382 C 320,340 380,320 412,310"/>
+  <path class="edge" d="M220,457 C 320,400 380,340 412,320"/>
+
+  <path class="edge" d="M770,127 C 680,150 620,220 590,290"/>
+  <path class="edge" d="M770,202 C 680,220 620,250 590,290"/>
+
+  <text x="500" y="580" text-anchor="middle" font-size="12.5" fill="#4a5568">Flechas = "consulta StateManager.CurrentState antes de actuar" (guard de estado), no llamadas directas entre scripts.</text>
+  <text x="500" y="598" text-anchor="middle" font-size="12.5" fill="#4a5568">MaterialChangerVR.SetMaterialByIndex() es además invocado por OllamaAIController al aplicar un comando de la IA.</text>
+</svg>

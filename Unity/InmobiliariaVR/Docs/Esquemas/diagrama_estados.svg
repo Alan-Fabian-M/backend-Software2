@@ -1,0 +1,63 @@
+<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Arial, sans-serif">
+  <style>
+    .state { fill:#eef4ff; stroke:#2f5fae; stroke-width:2; }
+    .state-unused { fill:#f4f4f4; stroke:#999; stroke-width:2; stroke-dasharray:6,4; }
+    .label { font-size:18px; font-weight:600; fill:#1c2a44; }
+    .sub { font-size:12px; fill:#4a5568; }
+    .edge { stroke:#2f5fae; stroke-width:2; fill:none; marker-end:url(#arrow); }
+    .edge-label { font-size:12px; fill:#2f5fae; }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2f5fae"/>
+    </marker>
+  </defs>
+
+  <text x="450" y="30" text-anchor="middle" font-size="20" font-weight="700" fill="#1c2a44">AppState — máquina de estados (StateManager)</text>
+
+  <!-- Recorrido -->
+  <rect class="state" x="60" y="180" width="180" height="70" rx="10"/>
+  <text class="label" x="150" y="210" text-anchor="middle">Recorrido</text>
+  <text class="sub" x="150" y="230" text-anchor="middle">estado inicial</text>
+
+  <!-- Personalizacion -->
+  <rect class="state" x="360" y="80" width="200" height="70" rx="10"/>
+  <text class="label" x="460" y="110" text-anchor="middle">Personalizacion</text>
+  <text class="sub" x="460" y="130" text-anchor="middle">mover/rotar muebles,</text>
+  <text class="sub" x="460" y="144" text-anchor="middle">cambiar material</text>
+
+  <!-- Pintura -->
+  <rect class="state" x="360" y="280" width="200" height="70" rx="10"/>
+  <text class="label" x="460" y="310" text-anchor="middle">Pintura</text>
+  <text class="sub" x="460" y="330" text-anchor="middle">pintar superficies con el rayo</text>
+
+  <!-- Menu (no usado) -->
+  <rect class="state-unused" x="680" y="180" width="180" height="70" rx="10"/>
+  <text class="label" x="770" y="210" text-anchor="middle" fill="#666">Menu</text>
+  <text class="sub" x="770" y="230" text-anchor="middle">declarado, sin uso en Sala_MVP</text>
+
+  <!-- Recorrido -> Personalizacion -->
+  <path class="edge" d="M220,190 C 280,150 320,130 358,120"/>
+  <text class="edge-label" x="235" y="150">SideMenuVR.SeleccionarPestana(1) /</text>
+  <text class="edge-label" x="235" y="165">MenuControllerVR.SetMode(1)</text>
+
+  <!-- Recorrido -> Pintura -->
+  <path class="edge" d="M220,240 C 280,280 320,300 358,310"/>
+  <text class="edge-label" x="235" y="300">SideMenuVR.SeleccionarPestana(2) /</text>
+  <text class="edge-label" x="235" y="315">MenuControllerVR.SetMode(2)</text>
+
+  <!-- Personalizacion -> Recorrido -->
+  <path class="edge" d="M358,140 C 300,170 260,200 222,210"/>
+
+  <!-- Pintura -> Recorrido -->
+  <path class="edge" d="M358,290 C 300,260 260,230 222,220"/>
+
+  <text class="edge-label" x="250" y="195" font-style="italic">ToggleMenuVR.Toggle() al cerrar el menú</text>
+
+  <text x="450" y="410" text-anchor="middle" font-size="13" fill="#4a5568">
+    Cada script de interacción (MaterialChangerVR, FurnitureManipulatorVR, RayPaintVR) consulta
+  </text>
+  <text x="450" y="428" text-anchor="middle" font-size="13" fill="#4a5568">
+    StateManager.Instance.CurrentState antes de actuar — no reacciona directo a estos eventos.
+  </text>
+</svg>
