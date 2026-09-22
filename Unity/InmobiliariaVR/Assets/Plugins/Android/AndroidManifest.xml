@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ADVERTENCIA - leer antes de activar este archivo:
+  Este manifest solo tiene efecto si en Player Settings > Publishing Settings esta tildado
+  "Custom Main Manifest" (si no esta tildado, Unity genera el suyo propio y este archivo se
+  ignora por completo - osea que con solo copiarlo aca no se rompe nada todavia).
+
+  Este archivo requiere que el proyecto use la "Classic Activity" de Unity (Player Settings >
+  Android > Configuration > Activity Type). El proyecto tenia tildado "Game Activity"
+  (ProjectSettings.asset: androidApplicationEntry: 2), lo cual rompia la build porque
+  GameActivity no expone com.unity3d.player.UnityPlayerActivity en el classpath. Se cambio
+  a Classic Activity (androidApplicationEntry: 1) el 2026-09-16 para que este manifest y
+  GalleryPickerActivity.java funcionen sin modificarlos.
+
+  No se pudo compilar/probar esta build en este entorno (no hay Android SDK/Gradle aca) -
+  antes de confiar en esto, generar el proyecto Gradle (Build Settings > Export Project) y
+  revisar que compile, o directamente instalar un build de prueba en el Quest.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application>
+
+        <!-- Reemplaza la Activity principal generada por Unity para poder recibir el
+             resultado del selector de fotos nativo (ver GalleryPickerActivity.java). -->
+        <activity android:name="com.inmobiliariavr.galleryplugin.GalleryPickerActivity"
+                  android:theme="@style/UnityThemeSelector"
+                  android:screenOrientation="landscape"
+                  android:launchMode="singleTask"
+                  android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale|layoutDirection|density"
+                  android:hardwareAccelerated="false"
+                  android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="com.oculus.intent.category.VR" />
+            </intent-filter>
+            <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+        </activity>
+
+        <activity android:name="com.unity3d.player.UnityPlayerActivity" tools:node="remove" />
+
+    </application>
+
+</manifest>   

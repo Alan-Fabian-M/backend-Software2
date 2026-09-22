@@ -1,0 +1,516 @@
+{
+  "metadata": {
+    "name": "Casa Grande (9 Habitaciones)",
+    "description": "Casa amplia de 16m × 14m con 9 habitaciones: sala, comedor, cocina, dormitorio principal, 2 baños, 2 dormitorios adicionales y estudio",
+    "dimensions": {
+      "width": 16.0,
+      "depth": 14.0,
+      "height": 3.0
+    },
+    "furniture_count": 22,
+    "created_date": "2026-09-19T00:00:00Z"
+  },
+  "room_info": {
+    "room_type": "casa",
+    "dimensions": {"x": 16.0, "y": 3.0, "z": 14.0},
+    "flooring_material": "wood",
+    "wall_color": "white"
+  },
+  "scene_elements": [
+    {
+      "id": "muro_sur",
+      "type": "muro",
+      "position": {"x": 8.0, "y": 0, "z": 0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 16.0, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#E8E4DC"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_norte",
+      "type": "muro",
+      "position": {"x": 8.0, "y": 0, "z": 14.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 16.0, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#E8E4DC"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_oeste",
+      "type": "muro",
+      "position": {"x": 0, "y": 0, "z": 7.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 14.0},
+      "material": {"type": "concrete", "color": "#E8E4DC"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_este",
+      "type": "muro",
+      "position": {"x": 16.0, "y": 0, "z": 7.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 14.0},
+      "material": {"type": "concrete", "color": "#E8E4DC"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+
+    {
+      "id": "muro_int_x6_a1",
+      "type": "muro_interior",
+      "position": {"x": 6.0, "y": 0, "z": 1.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 2.0},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_x6_a2",
+      "type": "muro_interior",
+      "position": {"x": 6.0, "y": 0, "z": 4.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 2.0},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_x6_b1",
+      "type": "muro_interior",
+      "position": {"x": 6.0, "y": 0, "z": 5.75},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 1.5},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_x6_b2",
+      "type": "muro_interior",
+      "position": {"x": 6.0, "y": 0, "z": 8.25},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 1.5},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_x6_c1",
+      "type": "muro_interior",
+      "position": {"x": 6.0, "y": 0, "z": 10.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 2.0},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_x6_c2",
+      "type": "muro_interior",
+      "position": {"x": 6.0, "y": 0, "z": 13.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 2.0},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+
+    {
+      "id": "muro_int_x11_a1",
+      "type": "muro_interior",
+      "position": {"x": 11.0, "y": 0, "z": 1.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 2.0},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_x11_a2",
+      "type": "muro_interior",
+      "position": {"x": 11.0, "y": 0, "z": 4.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 2.0},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_x11_b1",
+      "type": "muro_interior",
+      "position": {"x": 11.0, "y": 0, "z": 5.75},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 1.5},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_x11_b2",
+      "type": "muro_interior",
+      "position": {"x": 11.0, "y": 0, "z": 8.25},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 1.5},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_x11_c1",
+      "type": "muro_interior",
+      "position": {"x": 11.0, "y": 0, "z": 10.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 2.0},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_x11_c2",
+      "type": "muro_interior",
+      "position": {"x": 11.0, "y": 0, "z": 13.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 2.0},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+
+    {
+      "id": "muro_int_z5_col1_a",
+      "type": "muro_interior",
+      "position": {"x": 1.25, "y": 0, "z": 5.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 2.5, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_z5_col1_b",
+      "type": "muro_interior",
+      "position": {"x": 4.75, "y": 0, "z": 5.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 2.5, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_z5_col2_a",
+      "type": "muro_interior",
+      "position": {"x": 7.0, "y": 0, "z": 5.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 2.0, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_z5_col2_b",
+      "type": "muro_interior",
+      "position": {"x": 10.0, "y": 0, "z": 5.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 2.0, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_z5_col3_a",
+      "type": "muro_interior",
+      "position": {"x": 12.0, "y": 0, "z": 5.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 2.0, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_z5_col3_b",
+      "type": "muro_interior",
+      "position": {"x": 15.0, "y": 0, "z": 5.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 2.0, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+
+    {
+      "id": "muro_int_z9_col1_a",
+      "type": "muro_interior",
+      "position": {"x": 1.25, "y": 0, "z": 9.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 2.5, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_z9_col1_b",
+      "type": "muro_interior",
+      "position": {"x": 4.75, "y": 0, "z": 9.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 2.5, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_z9_col2_a",
+      "type": "muro_interior",
+      "position": {"x": 7.0, "y": 0, "z": 9.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 2.0, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_z9_col2_b",
+      "type": "muro_interior",
+      "position": {"x": 10.0, "y": 0, "z": 9.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 2.0, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_z9_col3_a",
+      "type": "muro_interior",
+      "position": {"x": 12.0, "y": 0, "z": 9.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 2.0, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+    {
+      "id": "muro_int_z9_col3_b",
+      "type": "muro_interior",
+      "position": {"x": 15.0, "y": 0, "z": 9.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 2.0, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F0F0F0"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": true, "movable": false}
+    },
+
+    {
+      "id": "piso",
+      "type": "piso",
+      "position": {"x": 8.0, "y": -0.1, "z": 7.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 16.0, "y": 0.1, "z": 14.0},
+      "material": {"type": "wood", "color": "#9C7A54"},
+      "metadata": {"selectable": false, "deletable": false, "colorable": false, "movable": false}
+    },
+
+    {
+      "id": "sofa_living",
+      "type": "sofa",
+      "position": {"x": 2.0, "y": 0.5, "z": 1.2},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.2, "y": 1.0, "z": 1.0},
+      "prefab_category": "Sofas",
+      "variant_hint": 25,
+      "material": {"color": "#2C3E50"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+    {
+      "id": "mesa_living",
+      "type": "mesa",
+      "position": {"x": 2.0, "y": 0.5, "z": 2.3},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.8, "y": 1.0, "z": 0.8},
+      "prefab_category": "Tables",
+      "variant_hint": 12,
+      "material": {"color": "#34495E"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+    {
+      "id": "tv_living",
+      "type": "tv",
+      "position": {"x": 2.0, "y": 0.5, "z": 4.3},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 0.3},
+      "material": {"color": "#1C1C1C"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+
+    {
+      "id": "mesa_comedor",
+      "type": "mesa",
+      "position": {"x": 8.5, "y": 0.5, "z": 2.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.3, "y": 1.0, "z": 1.3},
+      "prefab_category": "Tables",
+      "variant_hint": 20,
+      "material": {"color": "#8B5A3C"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+    {
+      "id": "silla_comedor_1",
+      "type": "silla",
+      "position": {"x": 7.6, "y": 0.5, "z": 2.5},
+      "rotation": {"x": 0, "y": 90, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "prefab_category": "Chairs",
+      "variant_hint": 10,
+      "material": {"color": "#2C3E50"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+    {
+      "id": "silla_comedor_2",
+      "type": "silla",
+      "position": {"x": 9.4, "y": 0.5, "z": 2.5},
+      "rotation": {"x": 0, "y": 270, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "prefab_category": "Chairs",
+      "variant_hint": 10,
+      "material": {"color": "#2C3E50"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+
+    {
+      "id": "refrigerador_cocina",
+      "type": "refrigerador",
+      "position": {"x": 12.0, "y": 0.5, "z": 4.3},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.8, "y": 1.0, "z": 0.8},
+      "material": {"color": "#D5D8DC"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+    {
+      "id": "horno_cocina",
+      "type": "horno",
+      "position": {"x": 13.5, "y": 0.5, "z": 4.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.8, "y": 1.0, "z": 0.8},
+      "material": {"color": "#2C3E50"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+    {
+      "id": "microondas_cocina",
+      "type": "microondas",
+      "position": {"x": 14.5, "y": 0.5, "z": 4.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.5, "y": 1.0, "z": 0.5},
+      "material": {"color": "#7F8C8D"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+    {
+      "id": "estufa_cocina",
+      "type": "estufa",
+      "position": {"x": 15.0, "y": 0.5, "z": 3.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.8, "y": 1.0, "z": 0.8},
+      "material": {"color": "#ECF0F1"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+
+    {
+      "id": "cama_master",
+      "type": "cama",
+      "position": {"x": 2.0, "y": 0.5, "z": 7.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.2, "y": 1.0, "z": 1.2},
+      "prefab_category": "Beds",
+      "variant_hint": 28,
+      "material": {"color": "#E8DAEF"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+    {
+      "id": "armario_master",
+      "type": "armario",
+      "position": {"x": 5.0, "y": 0.5, "z": 6.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.5, "z": 0.6},
+      "material": {"color": "#95A5A6"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+    {
+      "id": "mesa_noche_master",
+      "type": "mesa",
+      "position": {"x": 3.2, "y": 0.5, "z": 8.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.4, "y": 1.0, "z": 0.4},
+      "prefab_category": "Tables",
+      "variant_hint": 5,
+      "material": {"color": "#34495E"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+
+    {
+      "id": "bano_completo_1",
+      "type": "bano_completo",
+      "position": {"x": 8.5, "y": 0.5, "z": 7.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "material": {"color": "#FFFFFF"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+
+    {
+      "id": "cama_2",
+      "type": "cama",
+      "position": {"x": 14.5, "y": 0.5, "z": 7.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "prefab_category": "Beds",
+      "variant_hint": 15,
+      "material": {"color": "#ECF0F1"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+    {
+      "id": "armario_2",
+      "type": "armario",
+      "position": {"x": 12.0, "y": 0.5, "z": 6.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.5, "z": 0.6},
+      "material": {"color": "#95A5A6"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+
+    {
+      "id": "cama_3",
+      "type": "cama",
+      "position": {"x": 2.0, "y": 0.5, "z": 12.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "prefab_category": "Beds",
+      "variant_hint": 8,
+      "material": {"color": "#D6EAF8"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+    {
+      "id": "armario_3",
+      "type": "armario",
+      "position": {"x": 5.0, "y": 0.5, "z": 10.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.5, "z": 0.6},
+      "material": {"color": "#95A5A6"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+
+    {
+      "id": "bano_completo_2",
+      "type": "bano_completo",
+      "position": {"x": 8.5, "y": 0.5, "z": 11.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "material": {"color": "#FFFFFF"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+
+    {
+      "id": "escritorio_estudio",
+      "type": "escritorio",
+      "position": {"x": 14.5, "y": 0.5, "z": 13.0},
+      "rotation": {"x": 0, "y": 180, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 0.6},
+      "material": {"color": "#34495E"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+    {
+      "id": "silla_estudio",
+      "type": "silla",
+      "position": {"x": 14.5, "y": 0.5, "z": 12.2},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "prefab_category": "Chairs",
+      "variant_hint": 22,
+      "material": {"color": "#2C3E50"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    },
+    {
+      "id": "estanteria_estudio",
+      "type": "estanteria",
+      "position": {"x": 12.0, "y": 0.5, "z": 13.5},
+      "rotation": {"x": 0, "y": 90, "z": 0},
+      "scale": {"x": 1.0, "y": 1.5, "z": 0.5},
+      "prefab_category": "Closets",
+      "variant_hint": 15,
+      "material": {"color": "#95A5A6"},
+      "metadata": {"selectable": true, "deletable": true, "colorable": true, "movable": true}
+    }
+  ]
+}

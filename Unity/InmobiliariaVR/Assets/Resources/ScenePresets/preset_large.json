@@ -1,0 +1,171 @@
+{
+  "metadata": {
+    "name": "Monoambiente Grande",
+    "description": "Distribución amplia 5.0m × 6.5m con zona separada de trabajo",
+    "dimensions": {
+      "width": 5.0,
+      "depth": 6.5,
+      "height": 3.0
+    },
+    "furniture_count": 10,
+    "created_date": "2026-09-15T00:00:00Z"
+  },
+  "room_info": {
+    "room_type": "monoambiente",
+    "dimensions": {"x": 5.0, "y": 3.0, "z": 6.5},
+    "flooring_material": "wood",
+    "wall_color": "beige"
+  },
+  "scene_elements": [
+    {
+      "id": "muro_norte",
+      "type": "muro",
+      "position": {"x": 2.5, "y": 0, "z": 6.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 5.0, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F5E6D3"},
+      "metadata": {
+        "selectable": false,
+        "deletable": false,
+        "colorable": true,
+        "movable": false
+      }
+    },
+    {
+      "id": "muro_sur",
+      "type": "muro",
+      "position": {"x": 2.5, "y": 0, "z": 0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 5.0, "y": 3.0, "z": 0.2},
+      "material": {"type": "concrete", "color": "#F5E6D3"},
+      "metadata": {
+        "selectable": false,
+        "deletable": false,
+        "colorable": true,
+        "movable": false
+      }
+    },
+    {
+      "id": "muro_este",
+      "type": "muro",
+      "position": {"x": 5.0, "y": 0, "z": 3.25},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 6.5},
+      "material": {"type": "concrete", "color": "#F5E6D3"},
+      "metadata": {
+        "selectable": false,
+        "deletable": false,
+        "colorable": true,
+        "movable": false
+      }
+    },
+    {
+      "id": "muro_oeste",
+      "type": "muro",
+      "position": {"x": 0, "y": 0, "z": 3.25},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.0, "z": 6.5},
+      "material": {"type": "concrete", "color": "#F5E6D3"},
+      "metadata": {
+        "selectable": false,
+        "deletable": false,
+        "colorable": true,
+        "movable": false
+      }
+    },
+    {
+      "id": "piso",
+      "type": "piso",
+      "position": {"x": 2.5, "y": -0.1, "z": 3.25},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 5.0, "y": 0.1, "z": 6.5},
+      "material": {"type": "wood", "color": "#A0826D"},
+      "metadata": {
+        "selectable": false,
+        "deletable": false,
+        "colorable": false,
+        "movable": false
+      }
+    },
+    {
+      "id": "sofa_grande",
+      "type": "sofa",
+      "position": {"x": 1.5, "y": 0.5, "z": 1.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.2, "y": 1.0, "z": 1.0},
+      "prefab_category": "Sofas",
+      "variant_hint": 32,
+      "material": {"color": "#34495E"},
+      "metadata": {
+        "selectable": true,
+        "deletable": true,
+        "colorable": true,
+        "movable": true
+      }
+    },
+    {
+      "id": "mesa_comedor",
+      "type": "mesa",
+      "position": {"x": 2.5, "y": 0.5, "z": 3.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.2, "y": 1.0, "z": 1.2},
+      "prefab_category": "Tables",
+      "variant_hint": 20,
+      "material": {"color": "#8B5A3C"},
+      "metadata": {
+        "selectable": true,
+        "deletable": true,
+        "colorable": true,
+        "movable": true
+      }
+    },
+    {
+      "id": "escritorio",
+      "type": "mesa",
+      "position": {"x": 4.0, "y": 0.5, "z": 2.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.8, "y": 1.0, "z": 0.6},
+      "prefab_category": "Tables",
+      "variant_hint": 5,
+      "material": {"color": "#34495E"},
+      "metadata": {
+        "selectable": true,
+        "deletable": true,
+        "colorable": true,
+        "movable": true
+      }
+    },
+    {
+      "id": "silla_escritorio",
+      "type": "silla",
+      "position": {"x": 4.0, "y": 0.5, "z": 2.8},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "prefab_category": "Chairs",
+      "variant_hint": 10,
+      "material": {"color": "#2C3E50"},
+      "metadata": {
+        "selectable": true,
+        "deletable": true,
+        "colorable": true,
+        "movable": true
+      }
+    },
+    {
+      "id": "cama_dormitorio",
+      "type": "cama",
+      "position": {"x": 1.5, "y": 0.5, "z": 5.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "prefab_category": "Beds",
+      "variant_hint": 28,
+      "material": {"color": "#E8DAEF"},
+      "metadata": {
+        "selectable": true,
+        "deletable": true,
+        "colorable": true,
+        "movable": true
+      }
+    }
+  ]
+}

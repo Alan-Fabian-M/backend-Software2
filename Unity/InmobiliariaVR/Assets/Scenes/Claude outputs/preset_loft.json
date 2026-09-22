@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "name": "Loft Moderno",
+    "description": "Distribución estilo loft 6.0m × 7.0m con espacios abiertos y altura adicional",
+    "dimensions": {
+      "width": 6.0,
+      "depth": 7.0,
+      "height": 3.5
+    },
+    "furniture_count": 12,
+    "created_date": "2026-09-15T00:00:00Z"
+  },
+  "room_info": {
+    "room_type": "loft",
+    "dimensions": {"x": 6.0, "y": 3.5, "z": 7.0},
+    "flooring_material": "concrete",
+    "wall_color": "light_gray"
+  },
+  "scene_elements": [
+    {
+      "id": "muro_norte",
+      "type": "muro",
+      "position": {"x": 0, "y": 0, "z": 7.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 6.0, "y": 3.5, "z": 0.2},
+      "material": {"type": "concrete", "color": "#D3D3D3"},
+      "metadata": {
+        "selectable": false,
+        "deletable": false,
+        "colorable": true,
+        "movable": false
+      }
+    },
+    {
+      "id": "muro_sur",
+      "type": "muro",
+      "position": {"x": 0, "y": 0, "z": 0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 6.0, "y": 3.5, "z": 0.2},
+      "material": {"type": "concrete", "color": "#D3D3D3"},
+      "metadata": {
+        "selectable": false,
+        "deletable": false,
+        "colorable": true,
+        "movable": false
+      }
+    },
+    {
+      "id": "muro_este",
+      "type": "muro",
+      "position": {"x": 6.0, "y": 0, "z": 3.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.5, "z": 7.0},
+      "material": {"type": "concrete", "color": "#D3D3D3"},
+      "metadata": {
+        "selectable": false,
+        "deletable": false,
+        "colorable": true,
+        "movable": false
+      }
+    },
+    {
+      "id": "muro_oeste",
+      "type": "muro",
+      "position": {"x": 0, "y": 0, "z": 3.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.2, "y": 3.5, "z": 7.0},
+      "material": {"type": "concrete", "color": "#D3D3D3"},
+      "metadata": {
+        "selectable": false,
+        "deletable": false,
+        "colorable": true,
+        "movable": false
+      }
+    },
+    {
+      "id": "piso",
+      "type": "piso",
+      "position": {"x": 3.0, "y": -0.1, "z": 3.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 6.0, "y": 0.1, "z": 7.0},
+      "material": {"type": "concrete", "color": "#7A7A7A"},
+      "metadata": {
+        "selectable": false,
+        "deletable": false,
+        "colorable": false,
+        "movable": false
+      }
+    },
+    {
+      "id": "sofa_moderno",
+      "type": "sofa",
+      "position": {"x": 1.5, "y": 0.5, "z": 2.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.3, "y": 1.0, "z": 1.0},
+      "prefab_category": "Sofas",
+      "variant_hint": 40,
+      "material": {"color": "#2C3E50"},
+      "metadata": {
+        "selectable": true,
+        "deletable": true,
+        "colorable": true,
+        "movable": true
+      }
+    },
+    {
+      "id": "mesa_centro_loft",
+      "type": "mesa",
+      "position": {"x": 3.0, "y": 0.5, "z": 2.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "prefab_category": "Tables",
+      "variant_hint": 35,
+      "material": {"color": "#34495E"},
+      "metadata": {
+        "selectable": true,
+        "deletable": true,
+        "colorable": true,
+        "movable": true
+      }
+    },
+    {
+      "id": "isla_cocina",
+      "type": "mesa",
+      "position": {"x": 4.5, "y": 0.5, "z": 1.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.2, "y": 1.0, "z": 1.0},
+      "prefab_category": "Tables",
+      "variant_hint": 42,
+      "material": {"color": "#8B5A3C"},
+      "metadata": {
+        "selectable": true,
+        "deletable": true,
+        "colorable": true,
+        "movable": true
+      }
+    },
+    {
+      "id": "estanteria_abierta",
+      "type": "estanteria",
+      "position": {"x": 5.0, "y": 0.5, "z": 0.8},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.5, "z": 0.6},
+      "prefab_category": "Closets",
+      "variant_hint": 15,
+      "material": {"color": "#95A5A6"},
+      "metadata": {
+        "selectable": true,
+        "deletable": true,
+        "colorable": true,
+        "movable": true
+      }
+    },
+    {
+      "id": "escritorio_alto",
+      "type": "mesa",
+      "position": {"x": 4.5, "y": 0.5, "z": 4.0},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 0.9, "y": 1.0, "z": 0.7},
+      "prefab_category": "Tables",
+      "variant_hint": 8,
+      "material": {"color": "#34495E"},
+      "metadata": {
+        "selectable": true,
+        "deletable": true,
+        "colorable": true,
+        "movable": true
+      }
+    },
+    {
+      "id": "silla_moderno",
+      "type": "silla",
+      "position": {"x": 4.5, "y": 0.5, "z": 4.8},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.0, "y": 1.0, "z": 1.0},
+      "prefab_category": "Chairs",
+      "variant_hint": 22,
+      "material": {"color": "#2C3E50"},
+      "metadata": {
+        "selectable": true,
+        "deletable": true,
+        "colorable": true,
+        "movable": true
+      }
+    },
+    {
+      "id": "cama_mezzanine",
+      "type": "cama",
+      "position": {"x": 1.5, "y": 0.5, "z": 5.5},
+      "rotation": {"x": 0, "y": 0, "z": 0},
+      "scale": {"x": 1.1, "y": 1.0, "z": 1.1},
+      "prefab_category": "Beds",
+      "variant_hint": 38,
+      "material": {"color": "#ECF0F1"},
+      "metadata": {
+        "selectable": true,
+        "deletable": true,
+        "colorable": true,
+        "movable": true
+      }
+    }
+  ]
+}
